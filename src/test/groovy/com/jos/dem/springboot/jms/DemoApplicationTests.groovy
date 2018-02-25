@@ -1,4 +1,4 @@
-package com.example.springbootjms
+package com.jos.dem.springboot.jms
 
 import org.junit.Test
 import org.junit.runner.RunWith
