@@ -2,8 +2,8 @@ package com.jos.dem.springboot.jms.service
 
 import com.jos.dem.springboot.jms.command.Command
 
-interface MessageService {
+interface NotificationService {
 
-  void sendMessage(final Command command)
+  void sendNotification(Command command)
 
 }

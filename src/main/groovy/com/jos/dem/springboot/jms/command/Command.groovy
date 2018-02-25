@@ -2,4 +2,4 @@ package com.jos.dem.springboot.jms.command
 
 import java.io.Serializable
 
-interface Command implements Serializable {}
+interface Command extends Serializable {}

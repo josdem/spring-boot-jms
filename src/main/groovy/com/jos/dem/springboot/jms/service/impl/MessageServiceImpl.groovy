@@ -24,9 +24,9 @@ class MessageServiceImpl implements MessageService {
   @Autowired
   JmsTemplate jmsTemplate
 
-  Logger log = LoggerFactory.getLog(this.class)
+  Logger log = LoggerFactory.getLogger(this.class)
 
-  void message(final Command command) {
+  void sendMessage(final Command command) {
     MessageCreator messageCreator = new MessageCreator() {
 
       @Override
