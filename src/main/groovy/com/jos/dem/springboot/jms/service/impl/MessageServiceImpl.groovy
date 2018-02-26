@@ -37,7 +37,7 @@ class MessageServiceImpl implements MessageService {
       }
     }
 
-    log.info 'Sending a new message'
+    log.info 'Sending message'
     jmsTemplate.send("destination", messageCreator)
   }
 

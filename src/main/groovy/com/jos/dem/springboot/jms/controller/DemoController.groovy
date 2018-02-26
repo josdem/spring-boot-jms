@@ -18,7 +18,7 @@ class DemoController {
   String index(){
   	Command person = new PersonCommand(nickname:'josdem', email:'joseluis.delacruz@gmail.com')
   	messageService.sendMessage(person)
-  	'Message Sent'
+  	'Java Message Service'
   }
 	
 }

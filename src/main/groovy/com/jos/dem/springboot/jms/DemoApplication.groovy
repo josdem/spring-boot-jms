@@ -12,8 +12,8 @@ import org.springframework.jms.config.SimpleJmsListenerContainerFactory
 @SpringBootApplication
 class DemoApplication {
 
-	 @Bean
-  JmsListenerContainerFactory<?> myJmsContainerFactory(ConnectionFactory connectionFactory) {
+	@Bean
+  JmsListenerContainerFactory<SimpleJmsListenerContainerFactory> myJmsContainerFactory(ConnectionFactory connectionFactory) {
     SimpleJmsListenerContainerFactory factory = new SimpleJmsListenerContainerFactory()
     factory.setConnectionFactory(connectionFactory)
     return factory
@@ -22,4 +22,5 @@ class DemoApplication {
 	static void main(String[] args) {
 		SpringApplication.run DemoApplication, args
 	}
+
 }
