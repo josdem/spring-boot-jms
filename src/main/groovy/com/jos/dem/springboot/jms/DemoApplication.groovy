@@ -19,8 +19,8 @@ class DemoApplication {
     return factory
   }
 
-	static void main(String[] args) {
-		SpringApplication.run DemoApplication, args
-	}
+  static void main(String[] args) {
+	  SpringApplication.run DemoApplication, args
+  }
 
 }
