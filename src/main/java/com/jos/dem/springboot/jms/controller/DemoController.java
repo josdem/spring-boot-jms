@@ -14,7 +14,7 @@ public class DemoController {
 	@Autowired
   private MessageService messageService;
 
-  @RequestMapping('/')
+  @RequestMapping("/")
   public String index(){
   	Command person = new PersonCommand("josdem","joseluis.delacruz@gmail.com");
   	messageService.sendMessage(person);

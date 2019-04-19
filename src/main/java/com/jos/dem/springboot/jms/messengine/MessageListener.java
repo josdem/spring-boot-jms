@@ -2,6 +2,7 @@ package com.jos.dem.springboot.jms.messengine;
 
 import javax.jms.Message;
 import javax.jms.ObjectMessage;
+import javax.jms.JMSException;
 
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
@@ -18,9 +19,9 @@ public class MessageListener {
   private Logger log = LoggerFactory.getLogger(this.getClass());
 
   @JmsListener(destination = "destination", containerFactory = "myJmsContainerFactory")
-  public void receiveMessage(Message message) {
-    Object command =  ((ObjectMessage) message).getObject();
-    log.info("Message Received: " + ToStringBuilder.reflectionToString(command));
+  public void receiveMessage(Message message) throws JMSException {
+      Object command =  ((ObjectMessage) message).getObject();
+      log.info("Message Received: " + ToStringBuilder.reflectionToString(command));
   }
 
 }
