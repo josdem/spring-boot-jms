@@ -1,6 +1,6 @@
-package com.jos.dem.springboot.jms.command
+package com.jos.dem.springboot.jms.command;
 
-class PersonCommand implements Command {
-	String nickname
-	String email
+public class PersonCommand implements Command {
+	private String nickname;
+	private String email;
 }

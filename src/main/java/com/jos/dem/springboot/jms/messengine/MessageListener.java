@@ -1,24 +1,26 @@
-package com.jos.dem.springboot.jms.messengine
+package com.jos.dem.springboot.jms.messengine;
 
-import javax.jms.Message
-import javax.jms.ObjectMessage
+import javax.jms.Message;
+import javax.jms.ObjectMessage;
 
-import org.springframework.stereotype.Component
-import org.springframework.jms.annotation.JmsListener
-import org.springframework.beans.factory.annotation.Autowired
+import org.apache.commons.lang3.builder.ToStringBuilder;
 
-import org.slf4j.Logger
-import org.slf4j.LoggerFactory
+import org.springframework.stereotype.Component;
+import org.springframework.jms.annotation.JmsListener;
+import org.springframework.beans.factory.annotation.Autowired;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 @Component
-class MessageListener {
+public class MessageListener {
 
-  Logger log = LoggerFactory.getLogger(this.class)
+  private Logger log = LoggerFactory.getLogger(this.getClass());
 
   @JmsListener(destination = "destination", containerFactory = "myJmsContainerFactory")
-  void receiveMessage(Message message) {
-    Object command =  ((ObjectMessage) message).getObject()
-    log.info "Message Received ${command.dump()}"    
+  public void receiveMessage(Message message) {
+    Object command =  ((ObjectMessage) message).getObject();
+    log.info("Message Received: " + ToStringBuilder.reflectionToString(command));
   }
 
 }

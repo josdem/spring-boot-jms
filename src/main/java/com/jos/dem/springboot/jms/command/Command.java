@@ -1,5 +1,5 @@
-package com.jos.dem.springboot.jms.command
+package com.jos.dem.springboot.jms.command;
 
-import java.io.Serializable
+import java.io.Serializable;
 
-interface Command extends Serializable {}
+public interface Command extends Serializable {}

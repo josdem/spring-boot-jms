@@ -23,8 +23,10 @@ repositories {
 
 dependencies {
 	compile('org.springframework.boot:spring-boot-starter-web')
+  compile('org.apache.commons:commons-lang3:3.7')
 	compile('org.apache.activemq:activemq-broker')
 	compile('org.springframework:spring-jms')
-	compile('org.codehaus.groovy:groovy')
+  compileOnly('org.projectlombok:lombok')
+  annotationProcessor('org.projectlombok:lombok')
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 }
