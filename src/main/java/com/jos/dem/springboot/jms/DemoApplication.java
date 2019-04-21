@@ -13,7 +13,7 @@ import org.springframework.jms.config.SimpleJmsListenerContainerFactory;
 public class DemoApplication {
 
 	@Bean
-  public SimpleJmsListenerContainerFactory myJmsContainerFactory(ConnectionFactory connectionFactory) {
+  public JmsListenerContainerFactory<?> myJmsContainerFactory(ConnectionFactory connectionFactory) {
     SimpleJmsListenerContainerFactory factory = new SimpleJmsListenerContainerFactory();
     factory.setConnectionFactory(connectionFactory);
     return factory;
