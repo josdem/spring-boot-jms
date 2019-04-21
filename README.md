@@ -12,5 +12,5 @@ gradle bootRun
 
 #### Read this as reference
 
-* http://josdem.io/techtalk/spring/spring_boot_jms/
+* https://josdem.io/techtalk/spring/spring_boot_jms/
 
