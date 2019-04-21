@@ -16,10 +16,10 @@ repositories {
 }
 
 dependencies {
-  implementation('org.springframework.boot:spring-boot-starter-web')
+  implementation('org.springframework.boot:spring-boot-starter-webflux')
   implementation('org.apache.commons:commons-lang3:3.7')
+  implementation("org.springframework.boot:spring-boot-starter-activemq")
   implementation('org.apache.activemq:activemq-broker')
-  implementation('org.springframework:spring-jms')
   compileOnly('org.projectlombok:lombok')
   annotationProcessor('org.projectlombok:lombok')
   testImplementation('org.springframework.boot:spring-boot-starter-test')
