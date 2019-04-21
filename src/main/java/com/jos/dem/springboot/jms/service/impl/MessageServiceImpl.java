@@ -27,15 +27,12 @@ public class MessageServiceImpl implements MessageService {
   private Logger log = LoggerFactory.getLogger(this.getClass());
 
   public void sendMessage(final Command command) {
-    MessageCreator messageCreator = new MessageCreator() {
-
-      @Override
-      public Message createMessage(Session session) throws JMSException {
+    MessageCreator messageCreator = (Session session) -> {
         ObjectMessage message = session.createObjectMessage();
         message.setObject(command);
         return message;
-      }
-    };
+      };
+
 
     log.info("Sending message");
     jmsTemplate.send("destination", messageCreator);
