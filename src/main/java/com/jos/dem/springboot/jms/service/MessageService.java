@@ -5,5 +5,4 @@ import com.jos.dem.springboot.jms.command.Command;
 public interface MessageService {
 
   void sendMessage(final Command command);
-
 }
