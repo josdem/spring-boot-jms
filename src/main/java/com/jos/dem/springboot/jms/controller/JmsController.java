@@ -1,7 +1,7 @@
 package com.jos.dem.springboot.jms.controller;
 
-import com.jos.dem.springboot.jms.command.Command;
-import com.jos.dem.springboot.jms.command.PersonCommand;
+import com.jos.dem.springboot.jms.command.Dto;
+import com.jos.dem.springboot.jms.command.PersonDto;
 import com.jos.dem.springboot.jms.service.MessageService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -19,8 +19,8 @@ public class JmsController {
   @GetMapping("/")
   public Mono<String> index() {
     log.info("Sending message");
-    Command person = new PersonCommand("josdem", "joseluis.delacruz@gmail.com");
-    messageService.sendMessage(person);
+    Dto personDto = new PersonDto("josdem", "joseluis.delacruz@gmail.com");
+    messageService.sendMessage(personDto);
     return Mono.just("Java Message Service");
   }
 }

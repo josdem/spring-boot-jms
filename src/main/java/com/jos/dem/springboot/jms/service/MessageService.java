@@ -1,8 +1,8 @@
 package com.jos.dem.springboot.jms.service;
 
-import com.jos.dem.springboot.jms.command.Command;
+import com.jos.dem.springboot.jms.command.Dto;
 
 public interface MessageService {
 
-  void sendMessage(final Command command);
+  void sendMessage(final Dto dto);
 }

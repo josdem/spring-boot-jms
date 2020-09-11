@@ -1,6 +1,6 @@
 package com.jos.dem.springboot.jms.service.impl;
 
-import com.jos.dem.springboot.jms.command.Command;
+import com.jos.dem.springboot.jms.command.Dto;
 import com.jos.dem.springboot.jms.service.MessageService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -19,12 +19,12 @@ public class MessageServiceImpl implements MessageService {
 
   private final JmsTemplate jmsTemplate;
 
-  public void sendMessage(final Command command) {
+  public void sendMessage(final Dto dto) {
     jmsTemplate.send(
         "destination",
         (Session session) -> {
           ObjectMessage message = session.createObjectMessage();
-          message.setObject(command);
+          message.setObject(dto);
           return message;
         });
   }

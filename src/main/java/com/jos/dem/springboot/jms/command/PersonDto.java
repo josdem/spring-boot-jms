@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class PersonCommand implements Command {
+public class PersonDto implements Dto {
   private String nickname;
   private String email;
 }
